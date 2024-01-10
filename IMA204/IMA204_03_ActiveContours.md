@@ -102,6 +102,23 @@ typora-copy-images-to: IMA204.assets
 
 
 
+### 1.4 [《Snakes: Active Contour Models》算法原理](https://blog.csdn.net/cfan927/article/details/108884457)
+
+- 内部能量 $E_{int}$ , 一阶导作用是保持轮廓的==连续性==, 二阶导是控制==轮廓平滑程度==
+
+- 图像能量 $E_{\mathrm{image}}$ :  $E_{\text{image}} = \omega_{\text{line}} E_{\text{line}} + \omega_{\text{edge}}E_{\text{edge}} +  \omega_{\text{term}}E_{\text{term}}$ , 引导轮廓到线, 边和末端
+
+  - 控制$\omega_{line}$的正负号可以控制轮廓被吸引到较暗的线或是较亮的线，也就是使轮廓试图靠近轮廓的最暗或最亮处。snake轮廓在被吸引到零交点的同时，仍然受到它自己的平滑限制
+
+  - $E_{\text{line}} = I(x, y)$
+  - $E_{\text{line}} = - (G_{\sigma} * \nabla^2 I)^2$
+  - $E_{\text{edge}} = - |\nabla I(x, y)|^2$
+  - $E_{\text{term}} = \frac{\partial n_{\perp}}{\partial \theta} = \frac{\partial C}{\partial n} \frac{\partial^2 C}{\partial n_{\perp}^2} = \frac{(C_{x}^2 + C_{y}^2)^{3/2}}{C_{yy}C_{x}^2 - 2C_{xy}C_{x}C_{y} + C_{xx}C_{y}^2}$
+
+  
+
+- ![image-20231214210158968](/IMA204.assets/image-20231214210158968.png)
+
 
 
 ---
