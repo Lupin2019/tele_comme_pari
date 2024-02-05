@@ -175,9 +175,9 @@ $$
 $$
 F_2(w) &= \overbrace{\frac{1}{2}\| Aw - b \|^2_2}^{f_2(w)} + \overbrace{\lambda \|w\|_1}^{g_2(w)} \\
 
-\nabla F_2(w) &= A^{\mathsf{T}}(Aw - b) + \lambda \text{sgn}(w) \\
+\nabla f_2(w) &= A^{\mathsf{T}}(Aw - b) \\
 
-\mathrm{prox}_{g_2}(x) &= \arg \min_w \overbrace{\frac{1}{2}\|w - x \|^2_2}^{f_2(w)} + \overbrace{\lambda \|w\|_1}^{g_2(w)} \\
+\mathrm{prox}_{t, g_2}(z) &= \arg \min_w \overbrace{\frac{1}{2t}\|w - z \|^2_2}^{f_2(w)} + \overbrace{\lambda \|w\|_1}^{g_2(w)} \\
 $$
 
 
